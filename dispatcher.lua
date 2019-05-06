@@ -1,4 +1,4 @@
-function luaDispatch()
+local function luaDispatch()
   local dispatcher = {}
   local listeners = {}
   function dispatcher.register(type, callback)
@@ -31,7 +31,7 @@ function luaDispatch()
   return dispatcher
 end
 
-function filter(t, fn, retainkeys)
+local function filter(t, fn, retainkeys)
   fn = iteratee(fn)
   local iter = getiter(t)
   local rtn = {}
